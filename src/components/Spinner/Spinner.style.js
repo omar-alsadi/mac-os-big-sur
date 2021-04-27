@@ -41,16 +41,18 @@ export const Logo = styled.img`
 export const LoadLine = styled.div`
     animation: ${fadeOut} 12.8s normal forwards;
     width: 200px;
-    height: 4px;
+    height: 5px;
     border-radius: 5px;
-    background: #999;
+    background: #888;
+    /* border: 1px solid #fff; */
     box-sizing: border-box;
 `
 
 export const FillLoadLine = styled.div`
     animation: ${load} 10s normal forwards;
     width: 0;
-    height: 4px;
+    height: 5px;
     border-radius: 5px;
     background: #fff;
+    overflow: hidden;
 `

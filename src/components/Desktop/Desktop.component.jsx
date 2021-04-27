@@ -1,5 +1,5 @@
 import { useStateValue } from "../../StateProvider";
-import LunchedApp from "../LunchedApp/LunchedApp.component";
+import FinderApp from "../LunchedApp/FinderApp/FinderApp.component";
 import { DesktopContainer } from "./Desktop.style";
 
 const Desktop = () => {
@@ -8,7 +8,7 @@ const Desktop = () => {
 
     return(
         <DesktopContainer>
-            { finderApp && <LunchedApp /> }
+            { finderApp && <FinderApp /> }
 
         </DesktopContainer>
     )

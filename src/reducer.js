@@ -2,7 +2,14 @@ export const INITIAL_STATE = {
     isDark: false,
     appOpened: 'Finder',
     notificationPop : false,
-    finderApp: false
+    finderApp: false,
+    safari: false,
+    messages: false,
+    mail: false,
+    contacts: false,
+    maps: false,
+    calculator: false,
+    trash: false
 } 
 
 const Reducer = (state = INITIAL_STATE, action) => {

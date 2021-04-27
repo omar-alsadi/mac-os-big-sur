@@ -100,3 +100,10 @@ export const FileWrapper = styled.div`
     }
 
 `
+
+export const RndWrapper = styled.div`
+    display: grid;
+    grid-template-rows: 50px 1fr;
+    grid-template-columns: 110px 1fr;
+    height: 100%
+`
