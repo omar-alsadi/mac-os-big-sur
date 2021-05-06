@@ -5,13 +5,17 @@ import DayWp from '../../assest/wp-day.jpg'
 import DarkWp from '../../assest/wp-dark.jpg'
 import {useStateValue} from '../../StateProvider'
 import Desktop from '../Desktop/Desktop.component'
+import { useRef } from 'react'
+import ContextMenu from '../ContextMenu/ContextMenu.component'
 
 const OS = () => {
 
-    const [{isDark} , dispatch] = useStateValue()
+    const [{isDark} , dispatch] = useStateValue();
+    const mainRef = useRef();
 
     return (
-        <DesktopWp style={{ background: `url(${isDark ? DarkWp : DayWp})`}}>
+        <DesktopWp ref={mainRef} style={{ background: `url(${isDark ? DarkWp : DayWp})`}}>
+            <ContextMenu mainRef={mainRef} />
             <NavBar />
             <Desktop />
             <Dock />

@@ -2,7 +2,7 @@ export const INITIAL_STATE = {
     isDark: false,
     appOpened: 'Finder',
     notificationPop : false,
-    finderApp: false,
+    finder: false,
     safari: false,
     messages: false,
     mail: false,
@@ -34,10 +34,35 @@ const Reducer = (state = INITIAL_STATE, action) => {
             ...state,
             notificationPop : false
         }
-        case 'TOGGLE_FINDER_APP':
+        case 'LAUNCH_FINDER_APP':
             return {
                 ...state,
-                finderApp: !state.finderApp
+                finder: true
+            }
+        case 'LAUNCH_SAFARI_APP':
+            return {
+                ...state,
+                safari: true
+            }
+        case 'LAUNCH_CALCULATOR_APP':
+            return {
+                ...state,
+                calculator: true
+            }
+        case 'CLOSE_FINDER_APP':
+            return {
+                ...state,
+                finder: false
+            }
+        case 'CLOSE_SAFARI_APP':
+            return {
+                ...state,
+                safari: false
+            }
+        case 'CLOSE_CALCULATOR_APP':
+            return {
+                ...state,
+                calculator: false
             }
         default: return state
     }

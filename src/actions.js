@@ -15,6 +15,10 @@ export const notificationClose = () => ({
     type: 'NOTIFICATION_CLOSE'
 })
 
-export const toggleFinderApp = () => ({
-    type: 'TOGGLE_FINDER_APP'
+export const openApp = (app) => ({
+    type: `LAUNCH_${app}_APP`
+})
+
+export const closeApp = (app) => ({
+    type: `CLOSE_${app}_APP`
 })

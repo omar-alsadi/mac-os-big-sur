@@ -23,14 +23,13 @@ const extractPositionFromTransformStyle = (transformStyle) => {
 
 const FinderApp = () => {
 
+    const [{isDark}, dispatch] = useStateValue();
+
     const containerRef = useRef();
 
     const windowRef = useRef();
-    //   const windowRef = useRef(Rnd);
-      console.log('containerRef: ', containerRef);
 
     const originalSizeRef = useRef({ width: 0 , height: 0});
-    console.log('1: ', originalSizeRef);
     
     const originalPositionRef = useRef({
         x: 0,
@@ -55,14 +54,10 @@ const FinderApp = () => {
         const desktopHeight = document.body.clientHeight - 90 ;
         const deskTopWidth = document.body.clientWidth;
 
-        console.log('d: ' , desktopHeight)
-
       // Get current width and height
      
       const { clientWidth : windowWidth } = window.innerWidth;
       const { clientHeight : windowHeight } = window.innerHeight;
-
-      console.log(windowRef)
 
     // Get current left and top position
     const { x: windowLeft, y: windowTop } = extractPositionFromTransformStyle(
@@ -119,15 +114,6 @@ const FinderApp = () => {
     
            X = ((3 / 2) * document.body.clientWidth + randX) / 2;
            Y = (100 + randY) / 2;
-  
-    const style = {
-        background:' rgb(27, 25, 30)',
-        color: 'white',
-        cursor: 'auto',
-        border: "solid 1px rgba(221, 221, 221, 0.5)",
-        borderRadius: '10px',
-    };
-
 
     console.log(document.body.clientWidth / 2)
 
@@ -136,7 +122,7 @@ const FinderApp = () => {
             ref={(c) => {
               if (c) windowRef.current = c;
             }}
-            style={style}
+            isDark={isDark}
             default={{
                 height: 500,
                 width: 500 ,
@@ -149,10 +135,10 @@ const FinderApp = () => {
             minWidth="400"
             minHeight="400"
             >
-               <RndWrapper ref={containerRef} >
+               <RndWrapper ref={containerRef} isDark={isDark}>
 
-                    <LeftSide>
-                        <TrafficBtn className='app-window-drag-handle titleBar' onMaximizedClick={MaximizeApp} />
+                    <LeftSide isDark={isDark}>
+                        <TrafficBtn className='app-window-drag-handle titleBar' onMaximizedClick={MaximizeApp} AppName='FINDER'/>
                         <FinderSlider />
                     </LeftSide>
                     <RightSide className='app-window-drag-handle titleBar'>

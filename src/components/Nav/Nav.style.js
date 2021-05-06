@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 
 export const Nav = styled.div`
-    background: rgba(0,0,0,.2);
-    color: #fff;
     font-size: 12px;
     backdrop-filter: blur(50px);
     height: 25px;
@@ -11,6 +9,13 @@ export const Nav = styled.div`
     justify-content: space-between;
     padding: 0 20px;
     z-index: 100;
+    background: rgba(255,255,255,.3);
+    color: #000;
+
+    ${({ isDark }) => isDark && `
+    background: rgba(0,0,0,.2);
+    color: #fff;
+    `}
 `
 
 export const NavLogo = styled.img`

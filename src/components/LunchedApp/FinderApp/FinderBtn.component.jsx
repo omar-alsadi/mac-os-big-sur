@@ -2,10 +2,10 @@ import { CloseIcon } from "../../Buttons/Close"
 import { MaximizeIcon } from "../../Buttons/Maximize"
 import { MinimizeIcon } from "../../Buttons/Minimize"
 import { BtnWrapper, FinderBtn } from "../LunchedApp.sytle"
-import { toggleFinderApp } from "../../../actions";
+import { closeApp, closeFinderApp } from "../../../actions";
 import { useStateValue } from "../../../StateProvider";
 
-const TrafficBtn = ({onMaximizedClick}) => {
+const TrafficBtn = ({onMaximizedClick , AppName}) => {
 
     const [{ appOpened }, dispatch ] = useStateValue();
 
@@ -13,11 +13,15 @@ const TrafficBtn = ({onMaximizedClick}) => {
         onMaximizedClick()
     }
 
+    const CloseApp = () => {
+        dispatch(closeApp(AppName));
+    }
+
     return (
 
         <BtnWrapper className='app-window-drag-handle titleBar'>
             <FinderBtn
-            style={{ backgroundColor : '#ff5f56'}} onClick={() => dispatch(toggleFinderApp())}
+            style={{ backgroundColor : '#ff5f56'}} onClick={CloseApp}
             ><CloseIcon/>
             </FinderBtn>
             <FinderBtn

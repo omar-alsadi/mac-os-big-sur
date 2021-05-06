@@ -5,12 +5,15 @@ import {CgDesktop} from 'react-icons/cg';
 import {WiTime9} from 'react-icons/wi';
 import {IoDocumentOutline} from 'react-icons/io5'
 import { AppList, AppsLeft } from "../LunchedApp.sytle";
+import { useStateValue } from "../../../StateProvider";
 
 
 const FinderSlider = () => {
 
+    const [{isDark}, dispatch] = useStateValue();
+
     return (
-        <AppsLeft>
+        <AppsLeft isDark={isDark}>
             Favourit
             <AppList>
                 <SiAirplayaudio />AirDrop

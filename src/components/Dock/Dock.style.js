@@ -11,8 +11,16 @@ export const DockContainer = styled.div`
     align-items: center;
     padding: 0 20px;
     margin: 10px auto;
-    border: 1px solid rgba(255,255,255, .3);
     border-radius: 13px;
+    background: rgba(255,255,255,.3);
+    color: #000;
+    border: 1px solid rgba(0,0,0, .3);
+
+    ${({ isDark }) => isDark && `
+    background: rgba(0,0,0,.2);
+    color: #fff;
+    border: 1px solid rgba(255,255,255, .3)
+  `}
 `
 
 export const DockLogo = styled.img`
@@ -40,19 +48,25 @@ export const AppWrapper = styled.div`
 `
 
 export const AppName = styled.span`
+    background: rgba(255,255,255,.3);
+    color: #000;
     position: absolute;
     top: -50%;
     left: 10%;
-    background: rgba(43, 42, 42, .7);
     backdrop-filter: blur(50px);
     width: 60px;
     height: 20px;
     display: none;
     justify-content: center;
     align-items: center;
-    border: 1px solid rgba(255,255,255, .3);
     border-radius: 5px;
     z-index: 10;
+    border: 1px solid rgba(255,255,255, .3);
+
+    ${({ isDark }) => isDark && `
+    background: rgba(43, 42, 42, .7);
+    color: #fff;
+  `}
 `
 
 export const AppLunched = styled.span`

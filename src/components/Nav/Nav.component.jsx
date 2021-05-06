@@ -1,12 +1,17 @@
 import { useEffect, useState } from 'react';
 import { EachSide, MenuIcons, MenuList, MenuStr, Nav, NavLogo, NavMenu } from './Nav.style'
 import navLogo from '../../assest/navLogo.png'
+import navLogoB from '../../assest/navLogo-day.png';
 import Wifi from '../../assest/wifi.png';
+import WifiB from '../../assest/wifi-day.png';
 import Day from '../../assest/day.png';
 import Night from '../../assest/night.png';
 import SiriLogo from '../../assest/siri.png';
 import CC from '../../assest/control-center-icon.png';
 import Battery from '../../assest/battery.png';
+import SiriLogoB from '../../assest/siri-day.png';
+import CCB from '../../assest/control-center-day.png';
+import BatteryB from '../../assest/battery-day.png';
 import {useStateValue} from '../../StateProvider';
 import { toggleMode, notificationPopUp } from '../../actions';
 import Siri from '../Notifications/Siri';
@@ -29,9 +34,9 @@ const NavBar = () => {
     }, [])
 
     return (
-        <Nav>
+        <Nav isDark={isDark}>
             <EachSide>
-                <NavLogo src={navLogo} alt='apple' />
+                <NavLogo src={isDark ? navLogo : navLogoB} alt='apple' />
                 <NavMenu>
                     <h3>{appOpened}</h3>
                     <MenuList>File</MenuList>
@@ -44,11 +49,11 @@ const NavBar = () => {
             </EachSide>
             <EachSide>
                 <MenuStr>ABC</MenuStr>
-            <MenuIcons src={Battery} alt='battery' style={{ width:'20px'}}/>
-            <MenuIcons src={Wifi} alt='wifi'/>
+            <MenuIcons src={isDark ? Battery : BatteryB} alt='battery' style={{ width:'20px'}}/>
+            <MenuIcons src={isDark ? Wifi : WifiB} alt='wifi'/>
             <MenuIcons src={isDark ? Day : Night} alt='dark-mode' onClick={() => dispatch(toggleMode())}/>
-            <MenuIcons src={CC} alt='control-center'/>
-            <MenuIcons src={SiriLogo} alt='siri' onClick={() => dispatch(notificationPopUp())}/>
+            <MenuIcons src={isDark ? CC : CCB} alt='control-center'/>
+            <MenuIcons src={isDark ? SiriLogo : SiriLogoB} alt='siri' onClick={() => dispatch(notificationPopUp())}/>
                 <MenuStr>
                     {TimeStr}
                 </MenuStr>
