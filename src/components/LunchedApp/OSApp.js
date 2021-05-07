@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef } from "react";
 import { Rnd } from "react-rnd";
+import { useStateValue } from "../../StateProvider";
 import TrafficBtn from "./FinderApp/FinderBtn.component";
 import { AppNavHead, RndWrapper } from "./LunchedApp.sytle";
 
@@ -16,6 +17,8 @@ const extractPositionFromTransformStyle = (transformStyle) => {
 
 
 const OSApp = (AppName, width, height, children) => {
+
+  const [{ isDark }, dispatch] = useStateValue();
 
   const containerRef = useRef();
 
@@ -47,6 +50,7 @@ const OSApp = (AppName, width, height, children) => {
 
     // Get current left and top position
     const { x: windowLeft, y: windowTop } = extractPositionFromTransformStyle(
+      console.log('X2: ', windowRef.current.props),
       windowRef.current.props.style.transform,
     );
 
@@ -121,6 +125,7 @@ const OSApp = (AppName, width, height, children) => {
       ref={(c) => {
         if (c) windowRef.current = c;
       }}
+      isDark={isDark}
       style={style}
       default={{
         height: AppName.height,
@@ -134,7 +139,7 @@ const OSApp = (AppName, width, height, children) => {
       minWidth="400"
       minHeight="400"
     >
-      <RndWrapper ref={containerRef} >
+      <RndWrapper ref={containerRef} isDark={isDark}>
         <AppNavHead className='app-window-drag-handle titleBar'>
           <TrafficBtn onMaximizedClick={MaximizeApp} AppName={AppName.AppName} />
         </AppNavHead>
