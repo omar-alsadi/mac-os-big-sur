@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useState, useMemo, useRef } from "react";
 import { Rnd } from "react-rnd";
 import { LeftSide, RightSide, RndWrapper, TopNav } from "../LunchedApp.sytle";
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
@@ -9,6 +9,7 @@ import { RiArrowLeftSLine, RiArrowRightSLine } from 'react-icons/ri';
 import TrafficBtn from "./FinderBtn.component";
 import FilesWrapper from "./FinderWrapper.component";
 import FinderSlider from "./FinderSlider.component";
+import { appClicked, setAppName } from "../../../actions";
 
 // ectracting positions x , y from style
 const extractPositionFromTransformStyle = (transformStyle) => {
@@ -23,7 +24,20 @@ const extractPositionFromTransformStyle = (transformStyle) => {
 
 const FinderApp = () => {
 
-  const [{ isDark }, dispatch] = useStateValue();
+  const [{ isDark, appOpened, zIndexApp }, dispatch] = useStateValue();
+
+  const [zIndex, setzIndex] = useState(0);
+
+  const hundleChange = (AppName) => {
+    dispatch(setAppName(AppName));
+  }
+
+  useEffect(() => {
+    if (appOpened === 'Finder') {
+      dispatch(appClicked());
+      setzIndex(zIndexApp);
+    }
+  }, [appOpened]);
 
   const containerRef = useRef();
 
@@ -123,6 +137,7 @@ const FinderApp = () => {
     cursor: 'auto',
     border: "solid 1px rgba(221, 221, 221, 0.5)",
     borderRadius: '10px',
+    zIndex: zIndex
   };
 
   console.log(document.body.clientWidth / 2)
@@ -145,6 +160,7 @@ const FinderApp = () => {
       bounds="parent"
       minWidth="400"
       minHeight="400"
+      onClick={() => hundleChange('Finder')}
     >
       <RndWrapper ref={containerRef} isDark={isDark}>
 

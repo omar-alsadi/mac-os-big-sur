@@ -22,3 +22,7 @@ export const openApp = (app) => ({
 export const closeApp = (app) => ({
     type: `CLOSE_${app}_APP`
 })
+
+export const appClicked = () => ({
+    type: 'SET_ZIndex'
+})

@@ -6,11 +6,11 @@ import { DesktopContainer } from "./Desktop.style";
 
 const Desktop = () => {
 
-    const [{ calculator ,finder, safari}, dispatch] = useStateValue();
+    const [{ calculator, finder, safari }, dispatch] = useStateValue();
 
-    return(
+    return (
         <DesktopContainer>
-            { finder && <FinderApp /> }
+            { finder && <FinderApp />}
             { safari && <SafariApp />}
             { calculator && <Calculator />}
 

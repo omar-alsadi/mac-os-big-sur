@@ -1,7 +1,7 @@
 export const INITIAL_STATE = {
     isDark: false,
     appOpened: 'Finder',
-    notificationPop : false,
+    notificationPop: false,
     finder: false,
     safari: false,
     messages: false,
@@ -9,15 +9,16 @@ export const INITIAL_STATE = {
     contacts: false,
     maps: false,
     calculator: false,
-    trash: false
-} 
+    trash: false,
+    zIndexApp: 0
+}
 
 const Reducer = (state = INITIAL_STATE, action) => {
-    switch( action.type ) {
+    switch (action.type) {
         case 'TOGGLE_MODE':
             return {
                 ...state,
-                isDark : !state.isDark
+                isDark: !state.isDark
             }
         case 'APP_OPENED':
             return {
@@ -27,13 +28,13 @@ const Reducer = (state = INITIAL_STATE, action) => {
         case 'NOTIFICATION_POP_UP':
             return {
                 ...state,
-                notificationPop : true
+                notificationPop: true
             }
-            case 'NOTIFICATION_CLOSE':
-        return {
-            ...state,
-            notificationPop : false
-        }
+        case 'NOTIFICATION_CLOSE':
+            return {
+                ...state,
+                notificationPop: false
+            }
         case 'LAUNCH_FINDER_APP':
             return {
                 ...state,
@@ -63,6 +64,11 @@ const Reducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 calculator: false
+            }
+        case 'SET_ZIndex':
+            return {
+                ...state,
+                zIndexApp: state.zIndexApp + 2
             }
         default: return state
     }

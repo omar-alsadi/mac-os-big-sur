@@ -11,21 +11,24 @@ export const ContextMenuContainer = styled.div`
     -moz-user-select: none;
     -ms-user-select: none;
     border: 1px solid rgba(255,255,255,.3);
-    background-color: rgba(27,27,28,.4);
+    background-color: rgba(255,255,255,.4);
     -webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);
     border-radius: .5rem;
     box-shadow: rgba(0,0,0,.3) 0 0 11px 0;
+
+    ${({ isDark }) => isDark && `
+        background-color: rgba(27,27,28,.4);
+    `}
 `
 
 export const ContextMenuList = styled.button`
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     display: flex;
-    color: white;
+    color: black;
     background-color: transparent;
     border: none;
-    /* justify-content: flex-start; */
     justify-content: space-between;
     width: 100%;
     padding: .3rem .4rem;
@@ -37,8 +40,17 @@ export const ContextMenuList = styled.button`
     transition: none;
 
     &:hover {
+        color: white;
         background-color: #0C61FE;
     }
+
+    ${({ isDark }) => isDark && `
+        color: white;
+
+        &:hover {
+            background-color: #147FFE;
+        }
+    `}
 `
 
 export const BreakLine = styled.div`
