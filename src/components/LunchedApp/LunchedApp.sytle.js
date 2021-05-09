@@ -26,6 +26,7 @@ export const FinderBtn = styled.button`
     align-items: center;
     padding: 0;
     outline: none;
+    transition: all .2s ease-in-out;
 
     svg {
         visibility: hidden;
