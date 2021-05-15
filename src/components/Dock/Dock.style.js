@@ -75,6 +75,6 @@ export const AppLunched = styled.span`
     left: 48%;
     width: 5px;
     height: 5px;
-    background-color: white;
+    background-color: lightgray;
     border-radius: 50%;
 `

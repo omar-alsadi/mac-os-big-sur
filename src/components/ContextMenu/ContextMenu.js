@@ -8,7 +8,7 @@ const useContextMenu = ({ mainRef }) => {
   const handleContextMenu = useCallback(
     (e) => {
       e.preventDefault();
-      if ( mainRef && mainRef.current.contains(e.target)) {
+      if (mainRef && mainRef.current.contains(e.target)) {
         let x = e.pageX;
         let y = e.pageY;
         setXPos(`${x}px`);

@@ -1,6 +1,6 @@
 export const INITIAL_STATE = {
-    isDark: false,
     appOpened: 'Finder',
+    isDark: false,
     notificationPop: false,
     finder: false,
     safari: false,
@@ -10,7 +10,16 @@ export const INITIAL_STATE = {
     maps: false,
     calculator: false,
     trash: false,
-    zIndexApp: 0
+    appleMenu: false,
+    appMenu: false,
+    menu1: false,
+    menu2: false,
+    menu3: false,
+    menu4: false,
+    menu5: false,
+    menu6: false,
+    menu7: false,
+    zIndexApp: 0,
 }
 
 const Reducer = (state = INITIAL_STATE, action) => {
@@ -69,6 +78,115 @@ const Reducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 zIndexApp: state.zIndexApp + 2
+            }
+        case 'TOGGLE_APPLE_MENU':
+            return {
+                ...state,
+                appleMenu: !state.appleMenu,
+                appMenu: false,
+                menu1: false,
+                menu2: false,
+                menu3: false,
+                menu4: false,
+                menu5: false,
+                menu6: false
+            }
+        case 'TOGGLE_APP_MENU':
+            return {
+                ...state,
+                appMenu: !state.appMenu,
+                appleMenu: false,
+                menu1: false,
+                menu2: false,
+                menu3: false,
+                menu4: false,
+                menu5: false,
+                menu6: false,
+            }
+        case 'TOGGLE_MENU_1':
+            return {
+                ...state,
+                appleMenu: false,
+                appMenu: false,
+                menu1: !state.menu1,
+                menu2: false,
+                menu3: false,
+                menu4: false,
+                menu5: false,
+                menu6: false,
+            }
+        case 'TOGGLE_MENU_2':
+            return {
+                ...state,
+                appleMenu: false,
+                appMenu: false,
+                menu1: false,
+                menu2: !state.menu2,
+                menu3: false,
+                menu4: false,
+                menu5: false,
+                menu6: false
+            }
+        case 'TOGGLE_MENU_3':
+            return {
+                ...state,
+                appleMenu: false,
+                appMenu: false,
+                menu1: false,
+                menu2: false,
+                menu3: !state.menu3,
+                menu4: false,
+                menu5: false,
+                menu6: false
+            }
+        case 'TOGGLE_MENU_4':
+            return {
+                ...state,
+                appleMenu: false,
+                appMenu: false,
+                menu1: false,
+                menu2: false,
+                menu3: false,
+                menu4: !state.menu4,
+                menu5: false,
+                menu6: false
+            }
+        case 'TOGGLE_MENU_5':
+            return {
+                ...state,
+                appleMenu: false,
+                appMenu: false,
+                menu1: false,
+                menu2: false,
+                menu3: false,
+                menu4: false,
+                menu5: !state.menu5,
+                menu6: false
+            }
+        case 'TOGGLE_MENU_6':
+            return {
+                ...state,
+                appleMenu: false,
+                appMenu: false,
+                menu1: false,
+                menu2: false,
+                menu3: false,
+                menu4: false,
+                menu5: false,
+                menu6: !state.menu6,
+            }
+        case 'TOGGLE_MENU_7':
+            return {
+                ...state,
+                appleMenu: false,
+                appMenu: false,
+                menu1: false,
+                menu2: false,
+                menu3: false,
+                menu4: false,
+                menu5: false,
+                menu6: false,
+                menu7: !state.menu7,
             }
         default: return state
     }

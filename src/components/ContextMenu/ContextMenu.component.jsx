@@ -16,7 +16,6 @@ const ContextMenu = (mainRef) => {
         <>
           <ContextMenuList isDark={isDark} key={index}>{list.title}{list.hasOptions && <span><RiArrowRightSLine /></span>}</ContextMenuList>
           {list.breakLine && <BreakLine />}
-          {console.log('list: ', list)}
         </>
       ))}
     </ContextMenuContainer>

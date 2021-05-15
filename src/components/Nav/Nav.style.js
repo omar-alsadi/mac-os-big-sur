@@ -22,7 +22,7 @@ export const NavLogo = styled.img`
     width: 15px;
 `
 
-export const NavMenu = styled.div`
+export const Menu = styled.div`
     display: flex;
     align-items: center;
     padding: 0 20px;
@@ -34,6 +34,9 @@ export const NavMenu = styled.div`
 `
 export const MenuList = styled.h4`
     padding: 0 10px;
+    &:first-child {
+        font-size: 1.17em;
+    }
 `
 
 export const MenuIcons = styled.img`

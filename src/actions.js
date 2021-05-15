@@ -23,6 +23,10 @@ export const closeApp = (app) => ({
     type: `CLOSE_${app}_APP`
 })
 
+export const toggleNavMenu = (Menu) => ({
+    type: `TOGGLE_${Menu}`
+})
+
 export const appClicked = () => ({
     type: 'SET_ZIndex'
 })
