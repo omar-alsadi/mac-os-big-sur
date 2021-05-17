@@ -84,8 +84,8 @@ const NavBar = () => {
                                     <MenuListContainer isDark={isDark}>
                                         {list.menu.map((i, index) =>
                                             <>
-                                                <List isDark={isDark} key={index}>{i.title}{i.hasOptions && <span><RiArrowRightSLine /></span>}</List>
-                                                {i.breakLine && <BreakLine />}
+                                                <List isDark={isDark} key={index} disabled={i.disabled}>{i.title}{i.hasOptions && <span><RiArrowRightSLine /></span>}</List>
+                                                {i.breakAfter && <BreakLine isDark={isDark} />}
                                             </>
                                         )}
                                     </MenuListContainer>
@@ -97,8 +97,8 @@ const NavBar = () => {
                         <MenuListContainer isDark={isDark}>
                             {appleMenu.map((i, index) =>
                                 <>
-                                    <List isDark={isDark} key={index}>{i.title}{i.hasOptions && <span><RiArrowRightSLine /></span>}</List>
-                                    {i.breakLine && <BreakLine />}
+                                    <List isDark={isDark} key={index} disabled={i.disabled}>{i.title}{i.hasOptions && <span><RiArrowRightSLine /></span>}</List>
+                                    {i.breakAfter && <BreakLine isDark={isDark} />}
                                 </>
                             )}
                         </MenuListContainer>

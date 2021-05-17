@@ -52,11 +52,34 @@ export const List = styled.button`
             background-color: #147FFE;
         }
     `}
+
+    ${({ disabled }) => disabled && `
+        color: rgba(21,21,35, .5);
+
+            &:hover {
+                color: rgba(27,27,27, .5);
+                background-color: transparent;
+            } 
+        `}
+
+    ${({ disabled, isDark }) => disabled && isDark && `
+        color: rgba(221,221,221, .2);
+
+            &:hover {
+                color: rgba(221,221,221, .2);
+                background-color: transparent;
+            } 
+        `}
+
 `
 
 export const BreakLine = styled.div`
     width: 100%;
     height: .3px;
-    background-color: rgba(	194, 194, 255, .2);
+    background-color: rgba(	21, 21, 35, .1);
     margin: 2px 0;
+
+    ${({ isDark }) => isDark && `
+        background-color: rgba(221,221,221,.1)
+    `}
 `
