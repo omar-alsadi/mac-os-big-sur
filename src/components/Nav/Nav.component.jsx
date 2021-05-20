@@ -66,10 +66,13 @@ const NavBar = () => {
 
     return (
         <Nav isDark={isDark}>
-            <EachSide ref={parentRef}>
-                <NavLogo onClick={() => { dispatch(toggleNavMenu('APPLE_MENU')); setActiveMenu(!activeMenu); setCurrentMenu('appleMenu') }}
-                    onMouseOver={() => activeMenu && dispatch(toggleNavMenu('APPLE_MENU'), setCurrentMenu('appleMenu'))}
-                    src={isDark ? navLogo : navLogoB} alt='apple' />
+            <EachSide ref={parentRef} style={{ height: '25px' }}>
+                <MenuList
+                    style={currentMenu === 'appleMenu' && activeMenu ? { backgroundColor: 'rgba(255,255,255,.4)' } : null}>
+                    <NavLogo onClick={() => { dispatch(toggleNavMenu('APPLE_MENU')); setActiveMenu(!activeMenu); setCurrentMenu('appleMenu') }}
+                        onMouseOver={() => activeMenu && dispatch(toggleNavMenu('APPLE_MENU'), setCurrentMenu('appleMenu'))}
+                        src={isDark ? navLogo : navLogoB} alt='apple' />
+                </MenuList>
                 <Menu>
                     {
                         Data().map((list, i) =>
@@ -79,6 +82,7 @@ const NavBar = () => {
                                     setActiveMenu(!activeMenu); setCurrentMenu(list.title)
                                 }}
                                     onMouseOver={() => activeMenu && dispatch(toggleNavMenu(list.navMenu), setCurrentMenu(list.title))}
+                                    style={currentMenu === list.title && activeMenu ? { backgroundColor: 'rgba(255,255,255,.4)' } : null}
                                     key={i}>{list.title}</MenuList>
                                 {currentMenu === list.title && activeMenu &&
                                     <MenuListContainer isDark={isDark}>

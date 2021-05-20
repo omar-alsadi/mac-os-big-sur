@@ -25,15 +25,23 @@ export const NavLogo = styled.img`
 export const Menu = styled.div`
     display: flex;
     align-items: center;
-    padding: 0 20px;
+    height: 100%;
     cursor: default;
 
     h3 {
         padding-right: 10px;
     }
 `
-export const MenuList = styled.h4`
+export const MenuList = styled.div`
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
     padding: 0 10px;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 3px;
+
     &:first-child {
         font-size: 1.17em;
     }
