@@ -13,7 +13,7 @@ import SiriLogoB from '../../assest/siri-day.png';
 import CCB from '../../assest/control-center-day.png';
 import BatteryB from '../../assest/battery-day.png';
 import { useStateValue } from '../../StateProvider';
-import { toggleMode, notificationPopUp, toggleNavMenu } from '../../actions';
+import { toggleMode, notificationPopUp, toggleNavMenu, setActiveMenu, setCurrentMenu } from '../../actions';
 import Siri from '../Notifications/Siri';
 import { appleMenu } from './Menu/MenuData/Apple.menu'
 import { finderMenu } from './Menu/MenuData/Finder.menu';
@@ -24,11 +24,8 @@ import { RiArrowRightSLine } from 'react-icons/ri';
 
 const NavBar = () => {
 
-    const [{ isDark, appOpened, notificationPop }, dispatch] = useStateValue();
+    const [{ isDark, appOpened, notificationPop, currentMenu, activeMenu }, dispatch] = useStateValue();
     const [Time, setTime] = useState('');
-    const [currentMenu, setCurrentMenu] = useState('');
-    const [forceClosed, setForceClosed] = useState(false);
-    const [activeMenu, setActiveMenu] = useState(false);
 
     const timestamp = Date.now();
     const TimeNow = new Intl.DateTimeFormat('en-US', { weekday: 'short', month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit' })
@@ -49,7 +46,7 @@ const NavBar = () => {
     ClickOutside(parentRef, () => {
 
         // set force close by clicking anywhere else makes the menu closed after clicking
-        setActiveMenu(false);
+        dispatch(setActiveMenu(false));
         setCurrentMenu('')
         console.log('clicked!!!')
     });
@@ -69,8 +66,8 @@ const NavBar = () => {
             <EachSide ref={parentRef} style={{ height: '25px' }}>
                 <MenuList
                     style={currentMenu === 'appleMenu' && activeMenu ? { backgroundColor: 'rgba(255,255,255,.4)' } : null}>
-                    <NavLogo onClick={() => { dispatch(toggleNavMenu('APPLE_MENU')); setActiveMenu(!activeMenu); setCurrentMenu('appleMenu') }}
-                        onMouseOver={() => activeMenu && dispatch(toggleNavMenu('APPLE_MENU'), setCurrentMenu('appleMenu'))}
+                    <NavLogo onClick={() => { dispatch(toggleNavMenu('APPLE_MENU')); dispatch(setActiveMenu(!activeMenu)); dispatch(setCurrentMenu('appleMenu')) }}
+                        onMouseOver={() => activeMenu && dispatch(toggleNavMenu('APPLE_MENU'), dispatch(setCurrentMenu('appleMenu')))}
                         src={isDark ? navLogo : navLogoB} alt='apple' />
                 </MenuList>
                 <Menu>
@@ -79,9 +76,9 @@ const NavBar = () => {
                             <>
                                 <MenuList onClick={() => {
                                     dispatch(toggleNavMenu(list.navMenu));
-                                    setActiveMenu(!activeMenu); setCurrentMenu(list.title)
+                                    dispatch(setActiveMenu(!activeMenu)); dispatch(setCurrentMenu(list.title))
                                 }}
-                                    onMouseOver={() => activeMenu && dispatch(toggleNavMenu(list.navMenu), setCurrentMenu(list.title))}
+                                    onMouseOver={() => activeMenu && dispatch(toggleNavMenu(list.navMenu), dispatch(setCurrentMenu(list.title)))}
                                     style={currentMenu === list.title && activeMenu ? { backgroundColor: 'rgba(255,255,255,.4)' } : null}
                                     key={i}>{list.title}</MenuList>
                                 {currentMenu === list.title && activeMenu &&

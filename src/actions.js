@@ -7,6 +7,16 @@ export const setAppName = (appName) => ({
     payload: appName
 })
 
+export const setCurrentMenu = (appName) => ({
+    type: 'SET_CURRENT_MENU',
+    payload: appName
+})
+
+export const setActiveMenu = (boolean) => ({
+    type: 'SET_ACTIVE_MENU',
+    payload: boolean
+})
+
 export const notificationPopUp = () => ({
     type: 'NOTIFICATION_POP_UP'
 })

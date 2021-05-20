@@ -1,5 +1,7 @@
 export const INITIAL_STATE = {
     appOpened: 'Finder',
+    activeMenu: false,
+    currentMenu: '',
     isDark: false,
     notificationPop: false,
     finder: false,
@@ -32,7 +34,8 @@ const Reducer = (state = INITIAL_STATE, action) => {
         case 'APP_OPENED':
             return {
                 ...state,
-                appOpened: action.payload
+                appOpened: action.payload,
+                activeMenu: false,
             }
         case 'NOTIFICATION_POP_UP':
             return {
@@ -77,7 +80,18 @@ const Reducer = (state = INITIAL_STATE, action) => {
         case 'SET_ZIndex':
             return {
                 ...state,
-                zIndexApp: state.zIndexApp + 2
+                zIndexApp: state.zIndexApp + 2,
+                activeMenu: false
+            }
+        case 'SET_CURRENT_MENU':
+            return {
+                ...state,
+                currentMenu: action.payload,
+            }
+        case 'SET_ACTIVE_MENU':
+            return {
+                ...state,
+                activeMenu: action.payload,
             }
         case 'TOGGLE_APPLE_MENU':
             return {
@@ -89,7 +103,8 @@ const Reducer = (state = INITIAL_STATE, action) => {
                 menu3: false,
                 menu4: false,
                 menu5: false,
-                menu6: false
+                menu6: false,
+                menu7: false
             }
         case 'TOGGLE_APP_MENU':
             return {
@@ -102,6 +117,7 @@ const Reducer = (state = INITIAL_STATE, action) => {
                 menu4: false,
                 menu5: false,
                 menu6: false,
+                menu7: false
             }
         case 'TOGGLE_MENU_1':
             return {
@@ -114,6 +130,7 @@ const Reducer = (state = INITIAL_STATE, action) => {
                 menu4: false,
                 menu5: false,
                 menu6: false,
+                menu7: false
             }
         case 'TOGGLE_MENU_2':
             return {
@@ -125,7 +142,8 @@ const Reducer = (state = INITIAL_STATE, action) => {
                 menu3: false,
                 menu4: false,
                 menu5: false,
-                menu6: false
+                menu6: false,
+                menu7: false
             }
         case 'TOGGLE_MENU_3':
             return {
@@ -137,7 +155,8 @@ const Reducer = (state = INITIAL_STATE, action) => {
                 menu3: !state.menu3,
                 menu4: false,
                 menu5: false,
-                menu6: false
+                menu6: false,
+                menu7: false
             }
         case 'TOGGLE_MENU_4':
             return {
@@ -149,7 +168,8 @@ const Reducer = (state = INITIAL_STATE, action) => {
                 menu3: false,
                 menu4: !state.menu4,
                 menu5: false,
-                menu6: false
+                menu6: false,
+                menu7: false
             }
         case 'TOGGLE_MENU_5':
             return {
@@ -161,7 +181,8 @@ const Reducer = (state = INITIAL_STATE, action) => {
                 menu3: false,
                 menu4: false,
                 menu5: !state.menu5,
-                menu6: false
+                menu6: false,
+                menu7: false
             }
         case 'TOGGLE_MENU_6':
             return {
@@ -174,6 +195,7 @@ const Reducer = (state = INITIAL_STATE, action) => {
                 menu4: false,
                 menu5: false,
                 menu6: !state.menu6,
+                menu7: false,
             }
         case 'TOGGLE_MENU_7':
             return {
