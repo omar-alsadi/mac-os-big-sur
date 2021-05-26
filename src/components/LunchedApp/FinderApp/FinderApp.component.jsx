@@ -162,7 +162,7 @@ const FinderApp = () => {
       minHeight="400"
       onClick={() => hundleChange('Finder')}
     >
-      <RndWrapper ref={containerRef} isDark={isDark}>
+      <RndWrapper ref={containerRef} isDark={isDark} style={ isDark ? null : { background: 'rgb(255, 255, 255)'}}>
 
         <LeftSide isDark={isDark}>
           <TrafficBtn className='app-window-drag-handle titleBar' onMaximizedClick={MaximizeApp} AppName='FINDER' />

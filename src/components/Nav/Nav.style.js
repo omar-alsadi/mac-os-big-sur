@@ -19,7 +19,7 @@ export const Nav = styled.div`
 `
 
 export const NavLogo = styled.img`
-    width: 15px;
+    width: 13px;
 `
 
 export const Menu = styled.div`
@@ -36,7 +36,7 @@ export const MenuList = styled.div`
     height: 100%;
     display: flex;
     align-items: center;
-    font-weight: 700;
+    font-weight: 600;
     padding: 0 10px;
     margin: 0;
     overflow: hidden;
@@ -44,6 +44,7 @@ export const MenuList = styled.div`
 
     &:first-child {
         font-size: 1.17em;
+        font-weight: 700;
     }
 `
 

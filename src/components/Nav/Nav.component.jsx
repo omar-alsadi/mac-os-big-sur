@@ -13,11 +13,15 @@ import SiriLogoB from '../../assest/siri-day.png';
 import CCB from '../../assest/control-center-day.png';
 import BatteryB from '../../assest/battery-day.png';
 import { useStateValue } from '../../StateProvider';
-import { toggleMode, notificationPopUp, toggleNavMenu, setActiveMenu, setCurrentMenu } from '../../actions';
+import { toggleMode, notificationPopUp, toggleNavMenu, setActiveMenu, setCurrentMenu, setAppName } from '../../actions';
 import Siri from '../Notifications/Siri';
 import { appleMenu } from './Menu/MenuData/Apple.menu'
 import { finderMenu } from './Menu/MenuData/Finder.menu';
 import { safariMenu } from './Menu/MenuData/Safari.menu';
+import { contactMenu } from './Menu/MenuData/Contact.menu'
+import { calculatorMenu } from './Menu/MenuData/Calculator.menu'
+import { mailMenu } from './Menu/MenuData/Mail.menu'
+import { mapsMenu } from './Menu/MenuData/Maps.menu'
 import { ClickOutside } from './Menu/click-outside';
 import { BreakLine, MenuListContainer, List } from './Menu/MenuList.style';
 import { RiArrowRightSLine } from 'react-icons/ri';
@@ -47,19 +51,34 @@ const NavBar = () => {
 
         // set force close by clicking anywhere else makes the menu closed after clicking
         dispatch(setActiveMenu(false));
-        setCurrentMenu('')
+        dispatch(setCurrentMenu(''));
+        dispatch(setAppName('Finder'));
         console.log('clicked!!!')
     });
-    // console.log('a: ', parentRef)
 
     // to render Menu data according which app opened
     const Data = () => {
         if (appOpened === 'Safari') {
             return safariMenu
+        } else if (appOpened === 'Calculator') {
+            return calculatorMenu
+        } else if (appOpened === 'Mail') {
+            return mailMenu
+        } else if (appOpened === 'Maps') {
+            return mapsMenu
+        } else if (appOpened === 'Contact') {
+            return contactMenu
         } else {
             return finderMenu
         }
     }
+
+    const ListRef = useRef();
+
+    // const getLeft = (ListRef) => {
+    //     const { offsetLeft } = ListRef;
+    //     console.log('aa: ', offsetLeft)
+    // }
 
     return (
         <Nav isDark={isDark}>
@@ -76,8 +95,9 @@ const NavBar = () => {
                             <>
                                 <MenuList onClick={() => {
                                     dispatch(toggleNavMenu(list.navMenu));
-                                    dispatch(setActiveMenu(!activeMenu)); dispatch(setCurrentMenu(list.title))
+                                    dispatch(setActiveMenu(!activeMenu)); dispatch(setCurrentMenu(list.title));
                                 }}
+                                    ref={currentMenu === list.title && activeMenu ? ListRef : null}
                                     onMouseOver={() => activeMenu && dispatch(toggleNavMenu(list.navMenu), dispatch(setCurrentMenu(list.title)))}
                                     style={currentMenu === list.title && activeMenu ? { backgroundColor: 'rgba(255,255,255,.4)' } : null}
                                     key={i}>{list.title}</MenuList>

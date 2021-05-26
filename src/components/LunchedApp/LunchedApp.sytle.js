@@ -119,7 +119,6 @@ export const FileWrapper = styled.div`
         font-size: 12px;
         margin-top: 5px;
     }
-
 `
 
 export const RndWrapper = styled.div`
@@ -137,10 +136,18 @@ export const RndWrapper = styled.div`
         background: rgb(27, 25, 30);
         color: white;
         border: solid 1px rgba(221, 221, 221, 0.5);
-  `}
+    `}
+
+    ${({ ActiveApp }) => ActiveApp === 'Calculator' && `
+        background: rgba(69, 69, 69, 0.7);
+        backdrop-filter: blur(40px);
+    `}
+
 `
 
 export const AppNavHead = styled.div`
         width: 98%;
         grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        z-index: 5;
 `

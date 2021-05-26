@@ -21,7 +21,7 @@ const TrafficBtn = ({ onMaximizedClick, AppName }) => {
 
     return (
 
-        <BtnWrapper className='app-window-drag-handle titleBar'>
+        <BtnWrapper className='app-window-drag-handle'>
             <FinderBtn
                 style={appOpened === ActiveApp ? { backgroundColor: '#ff5f56' } : { backgroundColor: '#999' }} onClick={CloseApp}
             ><CloseIcon />

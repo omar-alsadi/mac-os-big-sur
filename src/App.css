@@ -1,16 +1,4 @@
-.App {
-  text-align: center;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.titleBar {
-  height: 2.5rem;
-  width: 100%;
-
-  padding: 0 0.75rem;
+.calculator {
+  background: rgba(69, 69, 69, 0.7) !important;
+  backdrop-filter: blur(40px);
 }

@@ -4,6 +4,7 @@ import { appClicked, setAppName } from "../../actions";
 import { useStateValue } from "../../StateProvider";
 import TrafficBtn from "./FinderApp/FinderBtn.component";
 import { AppNavHead, RndWrapper } from "./LunchedApp.sytle";
+import '../../App.css'
 
 // ectracting positions x , y from style
 const extractPositionFromTransformStyle = (transformStyle) => {
@@ -17,15 +18,17 @@ const extractPositionFromTransformStyle = (transformStyle) => {
 }
 
 
-const OSApp = (AppName, width, height, children) => {
-
+const OSApp = (AppName, width, height, containerStyle, children) => {
 
   const [{ isDark, appOpened, zIndexApp }, dispatch] = useStateValue();
 
+  
   const [zIndex, setzIndex] = useState(0);
-
+  
   const App = AppName.AppName;
   const ActiveApp = App.charAt(0) + App.slice(1).toLowerCase();
+  
+  // console.log('app: ', ActiveApp);
 
   const hundleChange = () => {
     dispatch(setAppName(ActiveApp));
@@ -129,22 +132,16 @@ const OSApp = (AppName, width, height, children) => {
   Y = (100 + randY) / 2;
 
   const style = {
-    background: 'rgb(27, 25, 30)',
-    color: 'white',
     cursor: 'auto',
-    border: "solid 1px rgba(221, 221, 221, 0.5)",
     borderRadius: '10px',
-    zIndex: zIndex
+    zIndex: zIndex,
   };
-
-  console.log(document.body.clientWidth / 2)
 
   return (
     <Rnd
       ref={(c) => {
         if (c) windowRef.current = c;
       }}
-      isDark={isDark}
       style={style}
       appOpened={appOpened}
       default={{
@@ -160,13 +157,12 @@ const OSApp = (AppName, width, height, children) => {
       minHeight="400"
       onClick={() => hundleChange()}
     >
-      <RndWrapper ref={containerRef} isDark={isDark}>
+      <RndWrapper ref={containerRef} isDark={isDark} ActiveApp={ActiveApp}>
         <AppNavHead className='app-window-drag-handle titleBar'>
           <TrafficBtn onMaximizedClick={MaximizeApp} AppName={AppName.AppName} />
         </AppNavHead>
-        {children}
+        {AppName.children}
       </RndWrapper>
-
     </Rnd>
   )
 }

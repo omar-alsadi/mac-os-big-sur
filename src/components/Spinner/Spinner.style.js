@@ -18,7 +18,7 @@ const fadeOut = keyframes`
 `
 
 export const SpinnerContainer = styled.div`
-    animation: ${fadeOut} 13s normal forwards;
+    animation: ${fadeOut} 7s normal forwards;
     width: 100%;
     height: 100%;
     display: flex;
@@ -33,13 +33,13 @@ export const SpinnerContainer = styled.div`
     z-index: 999;
 `
 export const Logo = styled.img`
-    animation: ${fadeOut} 12.8s normal forwards;
+    animation: ${fadeOut} 6.8s normal forwards;
     width: 70px;
     margin-bottom: 3rem;
 `
 
 export const LoadLine = styled.div`
-    animation: ${fadeOut} 12.8s normal forwards;
+    animation: ${fadeOut} 6.8s normal forwards;
     width: 200px;
     height: 5px;
     border-radius: 5px;
@@ -49,7 +49,7 @@ export const LoadLine = styled.div`
 `
 
 export const FillLoadLine = styled.div`
-    animation: ${load} 10s normal forwards;
+    animation: ${load} 6s normal forwards;
     width: 0;
     height: 5px;
     border-radius: 5px;

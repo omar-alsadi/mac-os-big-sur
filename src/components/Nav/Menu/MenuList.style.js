@@ -11,15 +11,15 @@ export const MenuListContainer = styled.div`
     -moz-user-select: none;
     -ms-user-select: none;
     border: 1px solid rgba(255,255,255,.3);
-    background-color: rgba(255,255,255,.8);
-    -webkit-backdrop-filter: blur(15px);
+    background-color: rgba(255,255,255,.97);
+    -webkit-backdrop-filter: blur(45px);
     backdrop-filter: blur(15px);
     border-radius: .5rem;
     box-shadow: rgba(0,0,0,.3) 0 0 11px 0;
     top: 25px;
 
     ${({ isDark }) => isDark && `
-        background-color: rgba(27,27,28,.8);
+        background-color: rgba(27,27,28,.98);
     `}
 `
 
