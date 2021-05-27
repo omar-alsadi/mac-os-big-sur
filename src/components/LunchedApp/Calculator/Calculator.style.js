@@ -47,13 +47,19 @@ export const Btn = styled.button`
     color: white;
     cursor: default;
 
+    & svg {
+        fill: white;
+    }
+
 
     ${({ functionality }) => functionality && `
         background-color: #f1a03b;
+        font-weight: 400;
     `}
 
     ${({ topKey }) => topKey && `
         grid-row: 1;
+        font-weight: 400;
         background-color: rgba(89,89,89,.7);
     `}
 

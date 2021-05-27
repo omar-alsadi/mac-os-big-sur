@@ -20,6 +20,7 @@ import { finderMenu } from './Menu/MenuData/Finder.menu';
 import { safariMenu } from './Menu/MenuData/Safari.menu';
 import { contactMenu } from './Menu/MenuData/Contact.menu'
 import { calculatorMenu } from './Menu/MenuData/Calculator.menu'
+import { notesMenu } from './Menu/MenuData/Notes.menu';
 import { mailMenu } from './Menu/MenuData/Mail.menu'
 import { mapsMenu } from './Menu/MenuData/Maps.menu'
 import { ClickOutside } from './Menu/click-outside';
@@ -68,6 +69,8 @@ const NavBar = () => {
             return mapsMenu
         } else if (appOpened === 'Contact') {
             return contactMenu
+        } else if ( appOpened === 'Notes') {
+            return notesMenu
         } else {
             return finderMenu
         }

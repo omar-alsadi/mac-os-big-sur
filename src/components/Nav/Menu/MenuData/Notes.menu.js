@@ -1,116 +1,100 @@
-export const safariMenu = [
+export const notesMenu = [
     {
-        title: 'Safari',
+        title: 'Notes',
         navMenu: 'APP_MENU',
         menu: [
             {
-                title: 'About Safari',
-                breakAfter: false,
-            },
-            {
-                title: 'Safari Extensions...',
+                title: 'About Notes',
                 breakAfter: true,
             },
             {
-                title: 'Preferences...',
-                breakAfter: false,
+                title: 'Preferences...'
             },
             {
-                title: 'Privacy Report...',
-                breakAfter: false,
-            },
-            {
-                title: 'Settings for This Website...',
+                title: 'Accounts...',
                 breakAfter: true,
+            },
+            {
+                title: 'Close All Locked Notes',
                 disabled: true,
-            },
-            {
-                title: 'Clear History...',
-                breakAfter: true,
             },
             {
                 title: 'Services',
+                hasOptions: true,
                 breakAfter: true,
-                hasOptions: true
             },
             {
-                title: 'Hide Safari',
-                breakAfter: false,
+                title: 'Hide Notes',
             },
             {
                 title: 'Hide Others',
-                breakAfter: false,
             },
             {
                 title: 'Show All',
-                breakAfter: true,
                 disabled: true,
+                breakAfter: true,
             },
             {
-                title: 'Quit Safari',
-                breakAfter: false,
-            }
+                title: 'Quit Notes',
+            },
         ],
     },
-
     {
         title: 'File',
         navMenu: 'MENU_1',
         menu: [
             {
-                title: 'New Window',
-            },
-            {
-                title: 'New Private Window',
-            },
-            {
-                title: 'New Tab',
-            },
-            {
-                title: 'Open File...',
-            },
-            {
-                title: 'Open Location...',
-                breakAfter: true,
-            },
-            {
-                title: 'Close Window',
-            },
-            {
-                title: 'Close All Windows',
-            },
-            {
-                title: 'Close Tab',
+                title: 'New Note',
                 disabled: true,
             },
             {
-                title: 'Save As...',
+                title: 'New Folder',
                 disabled: true,
                 breakAfter: true,
             },
             {
-                title: 'Share',
-                hasOptions: true
+                title: 'Share in iCloud',
+                hasOptions: true,
+                breakAfter: true,
+            },
+            {
+                title: 'Close',
+                breakAfter: true,
+            },
+            {
+                title: 'Import from iPhone or iPad',
+                hasOptions: true,
+            },
+            {
+                title: 'Import to Notes...',
+                breakAfter: true,
             },
             {
                 title: 'Export as PDF...',
                 disabled: true,
-                breakAfter: true,
             },
             {
-                title: 'Import From',
-                breakAfter: true,
+                title: 'Share',
                 hasOptions: true,
+                disabled: true,
             },
             {
-                title: 'Export Bookmarks...',
+                title: 'Pin Note'
+            },
+            {
+                title: 'Lock Note',
+                disabled: true,
+            },
+            {
+                title: 'Duplicate Note',
+                disabled: true,
                 breakAfter: true,
             },
             {
                 title: 'Print...',
                 disabled: true,
             },
-        ]
+        ],
     },
 
     {
@@ -126,6 +110,7 @@ export const safariMenu = [
                 disabled: true,
                 breakAfter: true,
             },
+
             {
                 title: 'Cut',
                 disabled: true,
@@ -136,10 +121,14 @@ export const safariMenu = [
             },
             {
                 title: 'Paste',
-                disabled: true
+                disabled: true,
             },
             {
                 title: 'Paste and Match Style',
+                disabled: true,
+            },
+            {
+                title: 'Paste and Retain Style',
                 disabled: true,
             },
             {
@@ -148,12 +137,13 @@ export const safariMenu = [
             },
             {
                 title: 'Select All',
+                disabled: true,
                 breakAfter: true,
             },
             {
-                title: 'AutoFill Form',
+                title: 'Rename Attachments...',
                 disabled: true,
-                hasOptions: true,
+                breakAfter: true,
             },
             {
                 title: 'Find',
@@ -164,7 +154,7 @@ export const safariMenu = [
                 hasOptions: true,
             },
             {
-                title: 'Substiutions',
+                title: 'Substitutions',
                 hasOptions: true,
             },
             {
@@ -181,80 +171,143 @@ export const safariMenu = [
             },
             {
                 title: 'Emoji & Symbols',
-            }
-        ],
+            },
+        ]
     },
-
     {
-        title: 'View',
+        title: 'Format',
         navMenu: 'MENU_3',
         menu: [
             {
-                title: 'Customize Toolbar...',
-                breakAfter: true,
-            },
-            {
-                title: 'Show Favorites Bar',
-            },
-            {
-                title: 'Show Tab Bar',
-            },
-            {
-                title: 'Show Status Bar',
-                breakAfter: true,
-            },
-            {
-                title: 'Show Sidebar',
-            },
-            {
-                title: 'Show Bookmarks Sidebar',
-            },
-            {
-                title: 'Show Reading List Sidebar',
-                breakAfter: true,
-            },
-            {
-                title: 'Show Reader',
+                title: 'Title',
                 disabled: true,
             },
             {
-                title: 'Show Tab overview',
+                title: 'Heading',
+                disabled: true,
             },
             {
-                title: 'Show Downloads',
+                title: 'Subheading',
+                disabled: true,
+            },
+            {
+                title: 'Body',
+                disabled: true,
+            },
+            {
+                title: 'Monospaced',
+                disabled: true,
+            },
+            {
+                title: 'Bulleted List',
+                disabled: true,
+            },
+            {
+                title: 'Dashed List',
+                disabled: true,
+            },
+            {
+                title: 'Numbered List',
                 disabled: true,
                 breakAfter: true,
             },
             {
-                title: 'Stop',
+                title: 'Checklist',
                 disabled: true,
             },
             {
-                title: 'Reload Page',
+                title: 'Mark as Checked',
                 disabled: true,
             },
             {
-                title: 'Reload With Content Blockers',
+                title: 'More',
+                hasOptions: true,
+                breakAfter: true,
+            },
+            {
+                title: 'Move List Item',
+                hasOptions: true,
+                breakAfter: true,
+            },
+            {
+                title: 'Table',
+                disabled: true,
+            },
+            {
+                title: 'Convert To Text',
+                disabled: true,
+            },
+            {
+                title: 'Reverse Table Direction',
                 disabled: true,
                 breakAfter: true,
             },
             {
-                title: 'Actual Size',
+                title: 'Font',
+                hasOptions: true,
+            },
+            {
+                title: 'Text',
+                hasOptions: true,
+            },
+            {
+                title: 'Indentation',
+                hasOptions: true,
+            },
+        ],
+    },
+    {
+        title: 'View',
+        navMenu: 'MENU_4',
+        menu: [
+            {
+                title: 'as List',
                 disabled: true,
             },
             {
-                title: 'Zoom In',
+                title: 'as Gallery',
+                disabled: true,
+                breakAfter: true,
+            },
+            {
+                title: 'Sort Folder By',
+                hasOptions: true,
+                breakAfter: true,
+            },
+            {
+                title: 'Show Folders',
+                disabled: true,
+            },
+            {
+                title: 'Show Note Count',
+                breakAfter: true,
+            },
+            {
+                title: 'Show Attachments Browser',
+                disabled: true,
+            },
+            {
+                title: 'Show in Note',
+                disabled: true,
+            },
+            {
+                title: 'Zoom in',
                 disabled: true,
             },
             {
                 title: 'Zoom Out',
                 disabled: true,
+            },
+            {
+                title: 'Actual Size',
+                disabled: true,
                 breakAfter: true,
             },
             {
-                title: 'Text Encoding',
-                hasOptions: true,
-                breakAfter: true,
+                title: 'Show Toolbar',
+            },
+            {
+                title: 'Customize Toolbar...',
             },
             {
                 title: 'Enter Full Screen',
@@ -262,125 +315,38 @@ export const safariMenu = [
         ],
     },
     {
-        title: 'History',
-        navMenu: 'MENU_4',
-        menu: [
-            {
-                title: 'Show All History',
-                breakAfter: true,
-            },
-            {
-                title: 'Back',
-                disabled: true,
-            },
-            {
-                title: 'Forward',
-                disabled: true,
-            },
-            {
-                title: 'Home',
-            },
-            {
-                title: 'Search Results SnapBack',
-                disabled: true,
-                breakAfter: true,
-            },
-            {
-                title: 'Recently Closed',
-                hasOptions: true,
-                disabled: true,
-            },
-            {
-                title: 'Reopen Last Closed Window',
-                disabled: true,
-            },
-            {
-                title: 'Reopen All Windows from Last Session',
-                breakAfter: true,
-            },
-            {
-                title: 'Clear History...',
-            },
-        ]
-    },
-    {
-        title: 'Bookmarks',
+        title: 'Window',
         navMenu: 'MENU_5',
         menu: [
             {
-                title: 'Show Start Page',
-                disabled: true,
-            },
-            {
-                title: 'Show Bookmarks',
-                disabled: true,
-            },
-            {
-                title: 'Edit Bookmarks',
-                disabled: true,
-                breakAfter: true,
-            },
-            {
-                title: 'Add Bookmarks...',
-                disabled: true,
-            },
-            {
-                title: 'Add Bookmarks for These Tabs...',
-                disabled: true,
-            },
-            {
-                title: 'Add Bookmarks Folder',
-            },
-        ]
-    },
-    {
-        title: 'Window',
-        navMenu: 'MENU_6',
-        menu: [
-            {
                 title: 'Minimize',
-                disabled: true,
             },
             {
                 title: 'Zoom',
+            },
+            {
+                title: 'Tile Window to Left of Screen',
                 disabled: true,
             },
             {
-                title: 'Move Window to Left of Screen',
+                title: 'Tile Window to Right of Screen',
                 disabled: true,
             },
             {
-                title: 'Move Window to Right of Screen',
-                disabled: true,
-            },
-            {
-                title: 'Arrange Tabs By',
-                hasOptions: true,
-            },
-            {
-                title: 'Show Previous Tab',
-                disabled: true,
-            },
-            {
-                title: 'Show Next Tab',
-                disabled: true,
-            },
-            {
-                title: 'Move Tab to New Window',
+                title: 'Float Selected Note',
                 disabled: true,
                 breakAfter: true,
             },
             {
-                title: 'Mute This Tab',
-                disabled: true,
+                title: 'Notes',
             },
             {
-                title: 'Mute Other Tabs',
-                disabled: true,
+                title: 'Photo Browser',
                 breakAfter: true,
             },
             {
                 title: 'Bring All to Front',
+                disabled: true,
             },
         ],
     },
@@ -393,12 +359,8 @@ export const safariMenu = [
                 breakAfter: true,
             },
             {
-                title: 'Safari Help',
-                breakAfter: true,
+                title: 'Notes Help',
             },
-            {
-                title: 'Acknowledgments'
-            }
         ],
     }
 ]

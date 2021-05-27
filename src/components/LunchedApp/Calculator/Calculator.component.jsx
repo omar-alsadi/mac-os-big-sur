@@ -6,7 +6,6 @@ const CalculatorApp = () => {
     return (
         <OSApp width='300' height='420' AppName='CALCULATOR'
         containerStyle='calculator'
-        style={{ backgroundColor: '#101016'}}
         children={<Calculator />} />
     )
 }

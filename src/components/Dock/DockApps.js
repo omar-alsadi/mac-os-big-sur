@@ -16,6 +16,10 @@ export const Apps = [
         appLogo: 'https://i.ibb.co/SXYSK14/contact.png'
     },
     {
+        appName: 'Notes',
+        appLogo: 'https://i.ibb.co/1TCdSNw/note.png'
+    },
+    {
         appName: 'Maps',
         appLogo: 'https://i.ibb.co/nLRtjym/maps.png'
     },
@@ -25,6 +29,6 @@ export const Apps = [
     },
     {
         appName: 'Trash',
-        appLogo: 'https://i.ibb.co/g6Jtvcb/trash.png'
+        appLogo: 'https://i.ibb.co/THq1rFP/trash.png'
     }
 ]
