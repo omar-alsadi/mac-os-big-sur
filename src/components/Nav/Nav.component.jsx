@@ -1,7 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { EachSide, MenuIcons, MenuList, MenuStr, Nav, NavLogo, Menu } from './Nav.style'
-import navLogo from '../../assest/navLogo.png'
-import navLogoB from '../../assest/navLogo-day.png';
+import { EachSide, MenuIcons, MenuStr, Nav } from './Nav.style'
 import Wifi from '../../assest/wifi.png';
 import WifiB from '../../assest/wifi-day.png';
 import Day from '../../assest/day.png';
@@ -13,19 +11,10 @@ import SiriLogoB from '../../assest/siri-day.png';
 import CCB from '../../assest/control-center-day.png';
 import BatteryB from '../../assest/battery-day.png';
 import { useStateValue } from '../../StateProvider';
-import { toggleMode, notificationPopUp, toggleNavMenu, setActiveMenu, setCurrentMenu, setAppName } from '../../actions';
+import { toggleMode, notificationPopUp, setActiveMenu, setCurrentMenu, setAppName } from '../../actions';
 import Siri from '../Notifications/Siri';
-import { appleMenu } from './Menu/MenuData/Apple.menu'
-import { finderMenu } from './Menu/MenuData/Finder.menu';
-import { safariMenu } from './Menu/MenuData/Safari.menu';
-import { contactMenu } from './Menu/MenuData/Contact.menu'
-import { calculatorMenu } from './Menu/MenuData/Calculator.menu'
-import { notesMenu } from './Menu/MenuData/Notes.menu';
-import { mailMenu } from './Menu/MenuData/Mail.menu'
-import { mapsMenu } from './Menu/MenuData/Maps.menu'
 import { ClickOutside } from './Menu/click-outside';
-import { BreakLine, MenuListContainer, List } from './Menu/MenuList.style';
-import { RiArrowRightSLine } from 'react-icons/ri';
+import MenuBar from './Menu/MenuBar/MenuBar.component';
 
 const NavBar = () => {
 
@@ -45,89 +34,23 @@ const NavBar = () => {
             clearInterval(interval);
         };
     }, [])
-
+    
     const parentRef = useRef();
 
     ClickOutside(parentRef, () => {
 
         // set force close by clicking anywhere else makes the menu closed after clicking
         dispatch(setActiveMenu(false));
-        dispatch(setCurrentMenu(''));
+        dispatch(setCurrentMenu('appleMenu'));
         dispatch(setAppName('Finder'));
         console.log('clicked!!!')
     });
 
-    // to render Menu data according which app opened
-    const Data = () => {
-        if (appOpened === 'Safari') {
-            return safariMenu
-        } else if (appOpened === 'Calculator') {
-            return calculatorMenu
-        } else if (appOpened === 'Mail') {
-            return mailMenu
-        } else if (appOpened === 'Maps') {
-            return mapsMenu
-        } else if (appOpened === 'Contact') {
-            return contactMenu
-        } else if ( appOpened === 'Notes') {
-            return notesMenu
-        } else {
-            return finderMenu
-        }
-    }
-
-    const ListRef = useRef();
-
-    // const getLeft = (ListRef) => {
-    //     const { offsetLeft } = ListRef;
-    //     console.log('aa: ', offsetLeft)
-    // }
 
     return (
         <Nav isDark={isDark}>
             <EachSide ref={parentRef} style={{ height: '25px' }}>
-                <MenuList
-                    style={currentMenu === 'appleMenu' && activeMenu ? { backgroundColor: 'rgba(255,255,255,.4)' } : null}>
-                    <NavLogo onClick={() => { dispatch(toggleNavMenu('APPLE_MENU')); dispatch(setActiveMenu(!activeMenu)); dispatch(setCurrentMenu('appleMenu')) }}
-                        onMouseOver={() => activeMenu && dispatch(toggleNavMenu('APPLE_MENU'), dispatch(setCurrentMenu('appleMenu')))}
-                        src={isDark ? navLogo : navLogoB} alt='apple' />
-                </MenuList>
-                <Menu>
-                    {
-                        Data().map((list, i) =>
-                            <>
-                                <MenuList onClick={() => {
-                                    dispatch(toggleNavMenu(list.navMenu));
-                                    dispatch(setActiveMenu(!activeMenu)); dispatch(setCurrentMenu(list.title));
-                                }}
-                                    ref={currentMenu === list.title && activeMenu ? ListRef : null}
-                                    onMouseOver={() => activeMenu && dispatch(toggleNavMenu(list.navMenu), dispatch(setCurrentMenu(list.title)))}
-                                    style={currentMenu === list.title && activeMenu ? { backgroundColor: 'rgba(255,255,255,.4)' } : null}
-                                    key={i}>{list.title}</MenuList>
-                                {currentMenu === list.title && activeMenu &&
-                                    <MenuListContainer isDark={isDark}>
-                                        {list.menu.map((i, index) =>
-                                            <>
-                                                <List isDark={isDark} key={index} disabled={i.disabled}>{i.title}{i.hasOptions && <span><RiArrowRightSLine /></span>}</List>
-                                                {i.breakAfter && <BreakLine isDark={isDark} />}
-                                            </>
-                                        )}
-                                    </MenuListContainer>
-                                }
-                            </>
-                        )
-                    }
-                    {currentMenu === 'appleMenu' && activeMenu &&
-                        <MenuListContainer isDark={isDark}>
-                            {appleMenu.map((i, index) =>
-                                <>
-                                    <List isDark={isDark} key={index} disabled={i.disabled}>{i.title}{i.hasOptions && <span><RiArrowRightSLine /></span>}</List>
-                                    {i.breakAfter && <BreakLine isDark={isDark} />}
-                                </>
-                            )}
-                        </MenuListContainer>
-                    }
-                </Menu>
+                <MenuBar />
             </EachSide>
             <EachSide>
                 <MenuStr>ABC</MenuStr>

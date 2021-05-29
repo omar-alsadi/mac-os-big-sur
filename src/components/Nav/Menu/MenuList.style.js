@@ -4,6 +4,7 @@ export const MenuListContainer = styled.div`
     display: block;
     z-index: 99999999;
     min-width: 16rem;
+    width: max-content;
     padding: .5rem;
     position: absolute;
     user-select: none;
@@ -17,6 +18,7 @@ export const MenuListContainer = styled.div`
     border-radius: .5rem;
     box-shadow: rgba(0,0,0,.3) 0 0 11px 0;
     top: 25px;
+    left: 0;
 
     ${({ isDark }) => isDark && `
         background-color: rgba(27,27,28,.98);

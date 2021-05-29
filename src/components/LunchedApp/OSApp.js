@@ -18,7 +18,7 @@ const extractPositionFromTransformStyle = (transformStyle) => {
 }
 
 
-const OSApp = (AppName, width, height, containerStyle, children) => {
+const OSApp = (AppName, width, height, children) => {
 
   const [{ isDark, appOpened, zIndexApp }, dispatch] = useStateValue();
 
@@ -150,7 +150,7 @@ const OSApp = (AppName, width, height, containerStyle, children) => {
         x: X,
         y: Y,
       }}
-      enableResizing={true}
+      enableResizing={appOpened === 'Calculator' ? false : true}
       dragHandleClassName="app-window-drag-handle"
       bounds="parent"
       minWidth="400"

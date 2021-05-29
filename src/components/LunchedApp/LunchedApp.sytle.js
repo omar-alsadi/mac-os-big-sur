@@ -131,6 +131,7 @@ export const RndWrapper = styled.div`
     grid-template-columns: 110px 1fr;
     height: 100%;
     box-shadow: 0 33px 81px rgb(0 0 0 / 31%);
+    overflow: hidden;
 
     ${({ isDark }) => isDark && `
         background: rgb(27, 25, 30);

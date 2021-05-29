@@ -39,7 +39,7 @@ export const MenuList = styled.div`
     font-weight: 600;
     padding: 0 10px;
     margin: 0;
-    overflow: hidden;
+    position: relative;
     border-radius: 3px;
 
     &:first-child {

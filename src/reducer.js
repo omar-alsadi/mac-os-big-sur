@@ -10,6 +10,7 @@ export const INITIAL_STATE = {
     mail: false,
     contacts: false,
     maps: false,
+    notes: false,
     calculator: false,
     trash: false,
     appleMenu: false,
@@ -52,30 +53,40 @@ const Reducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 finder: true
             }
-        case 'LAUNCH_SAFARI_APP':
-            return {
-                ...state,
-                safari: true
-            }
-        case 'LAUNCH_CALCULATOR_APP':
-            return {
-                ...state,
-                calculator: true
-            }
         case 'CLOSE_FINDER_APP':
             return {
                 ...state,
                 finder: false
+            }
+        case 'LAUNCH_SAFARI_APP':
+            return {
+                ...state,
+                safari: true
             }
         case 'CLOSE_SAFARI_APP':
             return {
                 ...state,
                 safari: false
             }
+        case 'LAUNCH_CALCULATOR_APP':
+            return {
+                ...state,
+                calculator: true
+            }
         case 'CLOSE_CALCULATOR_APP':
             return {
                 ...state,
                 calculator: false
+            }
+        case 'LAUNCH_NOTES_APP':
+            return {
+                ...state,
+                notes: true
+            }
+        case 'CLOSE_NOTES_APP':
+            return {
+                ...state,
+                notes: false
             }
         case 'SET_ZIndex':
             return {

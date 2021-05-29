@@ -1,6 +1,7 @@
 import { CloseIcon } from "../../Buttons/Close"
 import { MaximizeIcon } from "../../Buttons/Maximize"
 import { MinimizeIcon } from "../../Buttons/Minimize"
+import { PlusIcon } from "../../Buttons/Plus"
 import { BtnWrapper, FinderBtn } from "../LunchedApp.sytle"
 import { closeApp, closeFinderApp } from "../../../actions";
 import { useStateValue } from "../../../StateProvider";
@@ -29,9 +30,9 @@ const TrafficBtn = ({ onMaximizedClick, AppName }) => {
             <FinderBtn
                 style={appOpened === ActiveApp ? { backgroundColor: '#ffbd2e' } : { backgroundColor: '#999' }}
             ><MinimizeIcon /></FinderBtn>
-            <FinderBtn onClick={MaximizeApp}
+            <FinderBtn onClick={appOpened === 'Calculator' ? null : MaximizeApp}
                 style={appOpened === ActiveApp ? { backgroundColor: '#27c93f' } : { backgroundColor: '#999' }}
-            ><MaximizeIcon /></FinderBtn>
+            >{appOpened === 'Calculator' ? <PlusIcon /> : <MaximizeIcon />}</FinderBtn>
         </BtnWrapper>
     )
 }
