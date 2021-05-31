@@ -1,5 +1,7 @@
 # Mac OS Big Sur
 
+Live mode : https://mac-os-big-sur.netlify.app/
+
 built by using :
 
 - React JS
