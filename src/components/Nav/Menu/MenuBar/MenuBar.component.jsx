@@ -10,7 +10,7 @@ import { safariMenu } from '../MenuData/Safari.menu';
 import { calculatorMenu } from '../MenuData/Calculator.menu';
 import { mailMenu } from '../MenuData/Mail.menu';
 import { mapsMenu } from '../MenuData/Maps.menu';
-import { contactMenu } from '../MenuData/Contact.menu';
+import { contactsMenu } from '../MenuData/Contact.menu';
 import { notesMenu } from '../MenuData/Notes.menu';
 import { finderMenu } from '../MenuData/Finder.menu';
 
@@ -28,8 +28,8 @@ const MenuBar = () => {
             return mailMenu
         } else if (appOpened === 'Maps') {
             return mapsMenu
-        } else if (appOpened === 'Contact') {
-            return contactMenu
+        } else if (appOpened === 'Contacts') {
+            return contactsMenu
         } else if ( appOpened === 'Notes') {
             return notesMenu
         } else {

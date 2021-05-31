@@ -1,6 +1,6 @@
-export const contactMenu = [
+export const contactsMenu = [
     {
-        title: 'Contact',
+        title: 'Contacts',
         navMenu: 'APP_MENU',
         menu: [
             {
