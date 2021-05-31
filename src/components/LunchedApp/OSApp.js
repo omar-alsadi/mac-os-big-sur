@@ -27,8 +27,6 @@ const OSApp = (AppName, width, height, children) => {
   const App = AppName.AppName;
   const ActiveApp = App.charAt(0) + App.slice(1).toLowerCase();
   
-  console.log('app: ', ActiveApp);
-
   const hundleChange = () => {
     dispatch(setAppName(ActiveApp));
   }
@@ -70,7 +68,6 @@ const OSApp = (AppName, width, height, children) => {
 
     // Get current left and top position
     const { x: windowLeft, y: windowTop } = extractPositionFromTransformStyle(
-      console.log('X2: ', windowRef.current.props),
       windowRef.current.props.style.transform,
     );
 

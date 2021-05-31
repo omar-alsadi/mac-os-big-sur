@@ -43,7 +43,6 @@ const NavBar = () => {
         dispatch(setActiveMenu(false));
         dispatch(setCurrentMenu('appleMenu'));
         dispatch(setAppName('Finder'));
-        console.log('clicked!!!')
     });
 
 

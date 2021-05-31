@@ -54,8 +54,6 @@ const FinderApp = () => {
 
   useEffect(() => {
     containerRef.current.focus();
-    console.log('desktopHeight: ', document.body.clientHeight);
-    console.log('deskTopWidth: ', document.body.clientWidth);
   }, []);
 
   const MaximizeApp = () => {
@@ -75,7 +73,6 @@ const FinderApp = () => {
 
     // Get current left and top position
     const { x: windowLeft, y: windowTop } = extractPositionFromTransformStyle(
-      console.log('X: ', windowRef.current.props),
       windowRef.current.props.style.transform,
     );
 
@@ -139,8 +136,6 @@ const FinderApp = () => {
     borderRadius: '10px',
     zIndex: zIndex
   };
-
-  console.log(document.body.clientWidth / 2)
 
   return (
     <Rnd
