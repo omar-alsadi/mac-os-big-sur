@@ -22,13 +22,12 @@ const OSApp = (AppName, width, height, children) => {
 
   const [{ isDark, appOpened, zIndexApp }, dispatch] = useStateValue();
 
-  
   const [zIndex, setzIndex] = useState(0);
   
   const App = AppName.AppName;
   const ActiveApp = App.charAt(0) + App.slice(1).toLowerCase();
   
-  // console.log('app: ', ActiveApp);
+  console.log('app: ', ActiveApp);
 
   const hundleChange = () => {
     dispatch(setAppName(ActiveApp));

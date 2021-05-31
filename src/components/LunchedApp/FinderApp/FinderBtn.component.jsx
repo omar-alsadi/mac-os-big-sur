@@ -17,7 +17,7 @@ const TrafficBtn = ({ onMaximizedClick, AppName }) => {
     }
 
     const CloseApp = () => {
-        dispatch(closeApp(AppName));
+        dispatch(closeApp(AppName.toUpperCase()));
     }
 
     return (

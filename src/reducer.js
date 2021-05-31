@@ -68,15 +68,35 @@ const Reducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 safari: false
             }
-        case 'LAUNCH_CALCULATOR_APP':
+        case 'LAUNCH_MAIL_APP':
             return {
                 ...state,
-                calculator: true
+                mail: true
             }
-        case 'CLOSE_CALCULATOR_APP':
+        case 'CLOSE_MAIL_APP':
             return {
                 ...state,
-                calculator: false
+                mail: false
+            }
+        case 'LAUNCH_CONTACTS_APP':
+            return {
+                ...state,
+                contacts: true
+            }
+        case 'CLOSE_CONTACTS_APP':
+            return {
+                ...state,
+                contacts: false
+            }
+        case 'LAUNCH_MAPS_APP':
+            return {
+                ...state,
+                maps: true
+            }
+        case 'CLOSE_MAPS_APP':
+            return {
+                ...state,
+                maps: false
             }
         case 'LAUNCH_NOTES_APP':
             return {
@@ -87,6 +107,16 @@ const Reducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 notes: false
+            }
+        case 'LAUNCH_CALCULATOR_APP':
+            return {
+                ...state,
+                calculator: true
+            }
+        case 'CLOSE_CALCULATOR_APP':
+            return {
+                ...state,
+                calculator: false
             }
         case 'SET_ZIndex':
             return {

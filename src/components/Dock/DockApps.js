@@ -12,7 +12,7 @@ export const Apps = [
         appLogo: 'https://i.ibb.co/QHZqFhM/mail.png'
     },
     {
-        appName: 'Contact',
+        appName: 'Contacts',
         appLogo: 'https://i.ibb.co/SXYSK14/contact.png'
     },
     {

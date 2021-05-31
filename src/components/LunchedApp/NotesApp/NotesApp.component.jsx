@@ -15,8 +15,8 @@ const NotesApp = () => {
                     <span>Great new tools for notes synced to your iCloud account.</span>
                 </WelcomeTitle>
                 {
-                    features.map( feature => (
-                        <FeaturesWrapper>
+                    features.map( (feature, index) => (
+                        <FeaturesWrapper key={index}>
                             <img src={feature.img} alt='features' />
                             <FeaturesDesc isDark={isDark}>
                                 <h4>{feature.title}</h4>

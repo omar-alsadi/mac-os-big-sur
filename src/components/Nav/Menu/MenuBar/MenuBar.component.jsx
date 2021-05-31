@@ -62,7 +62,7 @@ const MenuBar = () => {
                 <Menu>
                     {
                         Data().map((list, i) =>
-                            <>
+                            
                                 <MenuList
                                 onClick={() => {
                                     dispatch(toggleNavMenu(list.navMenu));
@@ -71,7 +71,8 @@ const MenuBar = () => {
                                 }}
                                     onMouseOver={() => activeMenu && dispatch(toggleNavMenu(list.navMenu), dispatch(setCurrentMenu(list.title)),)}
                                     style={currentMenu === list.title && activeMenu ? { backgroundColor: 'rgba(255,255,255,.4)'} : null}
-                                    key={i}>{list.title}
+                                    key={i}>
+                                        {list.title}
                                         {currentMenu === list.title && activeMenu &&
                                             <MenuListContainer isDark={isDark}>
                                                 {list.menu.map((i, index) =>
@@ -83,7 +84,7 @@ const MenuBar = () => {
                                             </MenuListContainer>
                                         }
                                 </MenuList>
-                            </>
+                            
                         )
                     }
                 </Menu>
